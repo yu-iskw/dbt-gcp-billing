@@ -48,6 +48,8 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           cache: pip
+          cache-dependency-path: |
+            requirements-dev.txt
       - name: "Install dependencies"
         working-directory: "${{ github.workspace }}"
         run: |
