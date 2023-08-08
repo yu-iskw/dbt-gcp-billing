@@ -1,0 +1,30 @@
+name: lint
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          cache: pip
+      - name: "Install dependencies"
+        run: |
+          python -m pip install --upgrade pip==23.1.0
+          pip install -r requirements-dev.txt
+      - name: lint
+        run: |
+          pre-commit run --all-files end-of-file-fixer
+          pre-commit run --all-files trailing-whitespace
+          pre-commit run --all-files check-json
+          pre-commit run --all-files check-toml
+          pre-commit run --all-files check-yaml
+          pre-commit run --all-files detect-private-key
+          pre-commit run --all-files shellcheck
+          pre-commit run --all-files sqlfluff-lint

@@ -1,0 +1,151 @@
+---
+version: 2
+
+sources:
+  - name: "{{ var('dbt-gcp-billing::pricing::dataset') }}"
+    database: "{{ var('dbt-gcp-billing::pricing::project') }}"
+    tables:
+      - name: dbt_gcp_billing__pricing
+        identifier: "{{ var('dbt-gcp-billing::pricing::table', 'cloud_pricing_export') }}"
+
+        description: |
+          Contains Cloud Billing account pricing information, such as account ID, services, SKUs, products, geographic metadata, pricing units, currency, aggregation, and tiers.
+
+        tags: ["pricing"]
+
+        columns:
+          - name: export_time
+            description: |-
+              When the row was generated.
+
+          - name: pricing_as_of_time
+            description: |-
+              When the pricing was generated. The pricing was valid as of this date,
+               but could have been in effect before that.
+
+          - name: billing_account_id
+            description: |-
+              The ID of the Cloud Billing Account that the pricing is associated with.
+
+          - name: business_entity_name
+            description: |-
+              Business entity name of the service which offers the SKU.
+
+          - name: service.id
+            description: |-
+              The ID of the Google Cloud Platform service that offers the SKU.
+
+          - name: service.description
+            description: |-
+              The Google Cloud Platform service that offers the SKU.
+
+          - name: sku.id
+            description: |-
+              The ID of the resource the price is associated with.
+
+          - name: sku.description
+            description: |-
+              A description of the resource the price is associated with.
+
+          - name: sku.destination_migration_mappings
+            description: |-
+              The destination SKU(s) names which this SKU is being migrated to.
+
+          - name: product_taxonomy
+            description: |-
+              List of product categories that apply to the SKU.
+
+          - name: geo_taxonomy.type
+            description: |-
+              The type of geographic metadata associated with the SKU.
+
+          - name: geo_taxonomy.regions
+            description: |-
+              The GCP regions associated with the SKU.
+
+          - name: pricing_unit
+            description: |-
+              The unit in which resource usage is measured.
+
+          - name: pricing_unit_description
+            description: |-
+              Human readable description of the pricing unit.
+
+          - name: account_currency_code
+            description: |-
+              The currency that the billing account is configured to invoice in, using a 3-letter
+               currency code defined in ISO 4217.
+
+          - name: currency_conversion_rate
+            description: |-
+              The exchange rate from US dollars to the local currency. That is,
+               price/currency_conversion_rate is the price in US dollars.
+
+          - name: list_price.aggregation_info.aggregation_level
+            description: |-
+              Aggregation level for tiers.
+
+          - name: list_price.aggregation_info.aggregation_interval
+            description: |-
+              Aggregation interval for tiers.
+
+          - name: list_price.tiered_rates.pricing_unit_quantity
+            description: |-
+              Quantity of units the price refers to.
+
+          - name: list_price.tiered_rates.start_usage_amount
+            description: |-
+              Lower bound amount for a given pricing tier, in pricing units.
+
+          - name: list_price.tiered_rates.usd_amount
+            description: |-
+              The price, in USD, for the SKU.
+
+          - name: list_price.tiered_rates.account_currency_amount
+            description: |-
+              The converted price, for the SKU, in the currency the Cloud Billing Account is
+               configured to use. The conversion rate will be the one that is or was effective
+               on the `pricing_as_of_time`.
+
+          - name: billing_account_price.price_info.price_reason
+            description: |-
+              Background information on where the price originated from.
+
+          - name: billing_account_price.price_info.discount_percent
+            description: |-
+              For pricing that is the result of a percent discount, this is the percent
+               discount used.
+
+          - name: billing_account_price.price_info.discount_percent_fixed_date
+            description: |-
+              For pricing that is anchored to a specific date, the date used.
+
+          - name: billing_account_price.price_info.discount_migrated_from
+            description: |-
+              For discounts that were migrated from other SKUs, the source SKU of the discount.
+
+          - name: billing_account_price.aggregation_info.aggregation_level
+            description: |-
+              Aggregation level for tiers.
+
+          - name: billing_account_price.aggregation_info.aggregation_interval
+            description: |-
+              Aggregation interval for tiers.
+
+          - name: billing_account_price.tiered_rates.pricing_unit_quantity
+            description: |-
+              Quantity of units the price refers to.
+
+          - name: billing_account_price.tiered_rates.start_usage_amount
+            description: |-
+              Lower bound amount for a given pricing tier, in pricing units.
+
+          - name: billing_account_price.tiered_rates.usd_amount
+            description: |-
+              The price, in USD, for the SKU.
+
+          - name: billing_account_price.tiered_rates.account_currency_amount
+            description: |-
+              The converted price, for the SKU, in the currency the Cloud Billing Account is
+               configured to use. The conversion rate will be the one that is or was effective
+               on the `pricing_as_of_time`.

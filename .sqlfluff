@@ -1,0 +1,5 @@
+[sqlfluff]
+templater = jinja
+dialect = bigquery
+sql_file_exts = .sql
+max_line_length = 120

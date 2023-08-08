@@ -1,0 +1,18 @@
+---
+config:
+  send_anonymous_usage_stats: false
+  use_colors: true
+
+integration_tests:
+  target: bigquery
+  outputs:
+    bigquery:
+      type: bigquery
+      method: oauth
+      project: "{{ env_var('INTEGRATION_TESTS_PROJECT') }}"
+      execution_project: "{{ env_var('INTEGRATION_TESTS_PROJECT') }}"
+      dataset: "dbt_gcp_billing"
+      priority: "{{ env_var('DBT_BIGQUERY_PRIORITY', 'interactive') }}"
+      threads: |
+        {{ env_var("DBT_THREADS", 5) }}
+      location: "US"
