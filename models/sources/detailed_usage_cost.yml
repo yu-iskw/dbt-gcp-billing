@@ -1,0 +1,145 @@
+#  Licensed to the Apache Software Foundation (ASF) under one or more
+#  contributor license agreements.  See the NOTICE file distributed with
+#  this work for additional information regarding copyright ownership.
+#  The ASF licenses this file to You under the Apache License, Version 2.0
+#  (the "License"); you may not use this file except in compliance with
+#  the License.  You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+---
+version: 2
+
+sources:
+  - name: "{{ var('dbt-gcp-billing::detailed_usage_cost::dataset') }}"
+    database: "{{ var('dbt-gcp-billing::detailed_usage_cost::project') }}"
+    tables:
+      - name: dbt_gcp_billing__detailed_usage_cost
+        identifier: "{{ var('dbt-gcp-billing::detailed_usage_cost::table') }}"
+
+        description: |
+          Contains detailed Cloud Billing account cost usage information.
+          Includes everything in the standard usage cost data plus resource-level cost data, like a virtual machine or SSD that generates service usage.
+
+          Use the Detailed usage export to analyze costs at the resource level, and identify specific resources that might be driving up costs.
+          The detailed export includes resource-level information for the following products:
+
+          Compute Engine
+          Google Kubernetes Engine (GKE)
+          Cloud Functions
+          Cloud Run
+
+        tags: ["detailed_usage_cost"]
+
+        columns:
+          - name: billing_account_id
+            description: ""
+          - name: service.id
+            description: ""
+          - name: service.description
+            description: ""
+          - name: sku.id
+            description: ""
+          - name: sku.description
+            description: ""
+          - name: usage_start_time
+            description: ""
+          - name: usage_end_time
+            description: ""
+          - name: project.id
+            description: ""
+          - name: project.number
+            description: ""
+          - name: project.name
+            description: ""
+          - name: project.labels.key
+            description: ""
+          - name: project.labels.value
+            description: ""
+          - name: project.ancestry_numbers
+            description: ""
+          - name: project.ancestors.resource_name
+            description: ""
+          - name: project.ancestors.display_name
+            description: ""
+          - name: labels.key
+            description: ""
+          - name: labels.value
+            description: ""
+          - name: system_labels.key
+            description: ""
+          - name: system_labels.value
+            description: ""
+          - name: location.location
+            description: ""
+          - name: location.country
+            description: ""
+          - name: location.region
+            description: ""
+          - name: location.zone
+            description: ""
+          - name: resource.name
+            description: ""
+          - name: resource.global_name
+            description: ""
+          - name: export_time
+            description: ""
+          - name: cost
+            description: ""
+          - name: currency
+            description: ""
+          - name: currency_conversion_rate
+            description: ""
+          - name: usage.amount
+            description: ""
+          - name: usage.unit
+            description: ""
+          - name: usage.amount_in_pricing_units
+            description: ""
+          - name: usage.pricing_unit
+            description: ""
+          - name: credits.name
+            description: ""
+          - name: credits.amount
+            description: ""
+          - name: credits.full_name
+            description: ""
+          - name: credits.id
+            description: ""
+          - name: credits.type
+            description: ""
+          - name: invoice.month
+            description: ""
+          - name: cost_type
+            description: ""
+          - name: adjustment_info.id
+            description: ""
+          - name: adjustment_info.description
+            description: ""
+          - name: adjustment_info.mode
+            description: ""
+          - name: adjustment_info.type
+            description: ""
+          - name: tags.key
+            description: ""
+          - name: tags.value
+            description: ""
+          - name: tags.inherited
+            description: ""
+          - name: tags.namespace
+            description: ""
+          - name: price.effective_price
+            description: ""
+          - name: price.tier_start_amount
+            description: ""
+          - name: price.unit
+            description: ""
+          - name: price.pricing_unit_quantity
+            description: ""
+          - name: cost_at_list
+            description: ""

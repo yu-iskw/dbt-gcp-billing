@@ -1,0 +1,44 @@
+
+# Name your project! Project names should contain only lowercase characters
+# and underscores. A good package name should reflect your organization's
+# name or the intended use of these models
+name: 'integration_tests'
+version: '0.1.0'
+config-version: 2
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'integration_tests'
+
+# These configurations specify where dbt should look for different types of files.
+# The `model-paths` config, for example, states that models in this project can be
+# found in the "models/" directory. You probably won't need to change these!
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:         # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+
+# Configuring models
+# Full documentation: https://docs.getdbt.com/docs/configuring-models
+
+# In this example config, we tell dbt to build all models in the example/
+# directory as views. These settings can be overridden in the individual model
+# files using the `{{ config(...) }}` macro.
+models:
+
+vars:
+  "dbt-gcp-billing::standard_usage_cost::project": "project1"
+  "dbt-gcp-billing::standard_usage_cost::dataset": "dataset1"
+  "dbt-gcp-billing::standard_usage_cost::table": "gcp_billing_export_v1_xxxxxxx"
+  "dbt-gcp-billing::detailed_usage_cost::project": "project2"
+  "dbt-gcp-billing::detailed_usage_cost::dataset": "dataset2"
+  "dbt-gcp-billing::detailed_usage_cost::table": "gcp_billing_export_resource_v1_xxx"
+  "dbt-gcp-billing::pricing::project": "project3"
+  "dbt-gcp-billing::pricing::dataset": "dataset3"
+  "dbt-gcp-billing::pricing::table": "cloud_pricing_export"
