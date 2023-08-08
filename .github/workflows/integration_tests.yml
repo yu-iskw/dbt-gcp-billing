@@ -9,6 +9,8 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    env:
+      INTEGRATION_TESTS_PROJECT: "dummy-project"
     strategy:
       fail-fast: false
       matrix:
