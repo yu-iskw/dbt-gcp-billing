@@ -64,4 +64,5 @@ jobs:
       - name: validate
         working-directory: "${{ github.workspace }}/integration_tests"
         run: |
-          dbt ls --profiles-dir "${{ github.workspace }}/integration_tests/profiles"
+          dbt ls --profiles-dir "${{ github.workspace }}/integration_tests/profiles" \
+              --vars "$(cat "${{ github.workspace }}/integration_tests/vars/github-actions.yml")"
