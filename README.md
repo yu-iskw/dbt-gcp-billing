@@ -12,6 +12,7 @@ A dbt Package to deal with Google Cloud billing exported to BigQuery.
 - [How to use](#how-to-use)
   * [Supported tables](#supported-tables)
   * [dbt variables](#dbt-variables)
+  * [Reference to the tables](#reference-to-the-tables)
 
 <!-- tocstop -->
 
@@ -50,4 +51,27 @@ vars:
   "dbt-gcp-billing::pricing::project": "project3"
   "dbt-gcp-billing::pricing::dataset": "dataset3"
   "dbt-gcp-billing::pricing::table": "cloud_pricing_export"
+```
+
+### Reference to the tables
+
+#### Standard usage cost data
+
+```sql
+SELECT *
+FROM {{ source(var('dbt-gcp-billing::standard_usage_cost::dataset'), "dbt_gcp_billing__standard_usage_cost") }}
+```
+
+#### Detailed usage cost data
+
+```sql
+SELECT *
+FROM {{ source(var('dbt-gcp-billing::detailed_usage_cost::dataset'), "dbt_gcp_billing__detailed_usage_cost") }}
+```
+
+#### Pricing data
+
+```sql
+SELECT *
+FROM {{ source(var('dbt-gcp-billing::pricing::dataset'), "dbt_gcp_billing__pricing") }}
 ```
