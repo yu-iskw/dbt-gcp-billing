@@ -16,7 +16,7 @@
 setup-dev: setup-python setup-pre-commitm
 
 setup-python:
-	pip install --force-reinstall -U pip==23.1.0
+	pip install --force-reinstall -U pip==24.3
 	pip install --force-reinstall -r requirements-dev.txt
 
 setup-pre-commit:
