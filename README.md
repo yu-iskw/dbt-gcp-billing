@@ -1,4 +1,5 @@
 # dbt-gcp-billing
+
 A dbt Package to deal with Google Cloud billing exported to BigQuery.
 
 > Cloud Billing export to BigQuery enables you to export detailed Google Cloud billing data (such as usage, cost estimates, and pricing data) automatically throughout the day to a BigQuery dataset that you specify.
@@ -17,14 +18,17 @@ A dbt Package to deal with Google Cloud billing exported to BigQuery.
 <!-- tocstop -->
 
 ## Installation Instructions
+
 Check [dbt Hub](https://hub.getdbt.com/yu-iskw/dbt_gcp_billing/latest/) for the latest installation instructions.
 
 ## Requirements
+
 - dbt-core: 1.0.0 or later
 
 ## How to use
 
 ### Supported tables
+
 The dbt Package supports the following three tables exported from Google Cloud billing to BigQuery.
 
 - Standard usage cost data - Contains standard Cloud Billing account cost usage information, such as account ID, invoice date, services, SKUs, projects, labels, locations, cost, usage, credits, adjustments, and currency.

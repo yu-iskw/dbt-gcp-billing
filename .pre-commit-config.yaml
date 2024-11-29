@@ -35,12 +35,12 @@ repos:
     rev: 2.2.0
     hooks:
       - id: sqlfluff-lint
-#  - repo: https://github.com/dbt-checkpoint/dbt-checkpoint
-#    rev: v1.1.0
-#    hooks:
-#      - id: check-source-columns-have-desc
-#      - id: check-source-has-all-columns
-#      - id: check-source-table-has-description
+  #  - repo: https://github.com/dbt-checkpoint/dbt-checkpoint
+  #    rev: v1.1.0
+  #    hooks:
+  #      - id: check-source-columns-have-desc
+  #      - id: check-source-has-all-columns
+  #      - id: check-source-table-has-description
   # Run a Makefile target `geenrate-toc`
   - repo: local
     hooks:

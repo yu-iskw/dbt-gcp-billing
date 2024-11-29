@@ -1,0 +1,8 @@
+{
+  "json.schemas": [
+    {
+      "fileMatch": ["dbt_project.yml"],
+      "url": "https://raw.githubusercontent.com/dbt-labs/dbt-jsonschema/refs/heads/main/schemas/dbt_project.json"
+    }
+  ]
+}

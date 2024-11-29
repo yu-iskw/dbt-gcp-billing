@@ -10,15 +10,15 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           cache: pip
           cache-dependency-path: |
             requirements-dev.txt
       - name: "Install dependencies"
         run: |
-          python -m pip install --upgrade pip==23.1.0
+          python -m pip install --upgrade pip==24.3
           pip install -r requirements-dev.txt
       - name: lint
         run: |

@@ -49,8 +49,8 @@ jobs:
           - pip-requirements: "requirements-1.6.txt"
             python-version: "3.11"
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           cache: pip
           cache-dependency-path: |
@@ -58,7 +58,7 @@ jobs:
       - name: "Install dependencies"
         working-directory: "${{ github.workspace }}"
         run: |
-          python -m pip install --upgrade pip==23.1.0
+          python -m pip install --upgrade pip==24.3
           pip install -r requirements-dev.txt
       - name: "Install dbt Packages"
         working-directory: "${{ github.workspace }}/integration_tests"
