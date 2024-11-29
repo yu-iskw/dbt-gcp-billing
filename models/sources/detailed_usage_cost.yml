@@ -38,108 +38,108 @@ sources:
 
         columns:
           - name: billing_account_id
-            description: ""
+            description: "The Cloud Billing account ID that the usage is associated with."
           - name: service.id
-            description: ""
+            description: "The ID of the service that the usage is associated with."
           - name: service.description
-            description: ""
+            description: "A description of the service associated with the usage."
           - name: sku.id
-            description: ""
+            description: "The SKU ID for the service usage."
           - name: sku.description
-            description: ""
+            description: "A description of the SKU associated with the usage."
           - name: usage_start_time
-            description: ""
+            description: "The start time of the usage period."
           - name: usage_end_time
-            description: ""
+            description: "The end time of the usage period."
           - name: project.id
-            description: ""
+            description: "The ID of the project associated with the usage."
           - name: project.number
-            description: ""
+            description: "The project number associated with the usage."
           - name: project.name
-            description: ""
+            description: "The name of the project associated with the usage."
           - name: project.labels.key
-            description: ""
+            description: "The key of the labels associated with the project."
           - name: project.labels.value
-            description: ""
+            description: "The value of the labels associated with the project."
           - name: project.ancestry_numbers
-            description: ""
+            description: "An array of ancestry numbers for the project."
           - name: project.ancestors.resource_name
-            description: ""
+            description: "The resource name of the project's ancestors."
           - name: project.ancestors.display_name
-            description: ""
+            description: "The display name of the project's ancestors."
           - name: labels.key
-            description: ""
+            description: "The key of the labels associated with the usage."
           - name: labels.value
-            description: ""
+            description: "The value of the labels associated with the usage."
           - name: system_labels.key
-            description: ""
+            description: "The key of the system labels associated with the usage."
           - name: system_labels.value
-            description: ""
+            description: "The value of the system labels associated with the usage."
           - name: location.location
-            description: ""
+            description: "The specific location of the resource usage."
           - name: location.country
-            description: ""
+            description: "The country associated with the resource usage."
           - name: location.region
-            description: ""
+            description: "The region associated with the resource usage."
           - name: location.zone
-            description: ""
+            description: "The zone associated with the resource usage."
           - name: resource.name
-            description: ""
+            description: "The name of the resource generating the usage."
           - name: resource.global_name
-            description: ""
+            description: "A unique identifier for the resource."
           - name: export_time
-            description: ""
+            description: "The time when the data was exported."
           - name: cost
-            description: ""
+            description: "The total cost associated with the usage."
           - name: currency
-            description: ""
+            description: "The currency in which the cost is reported."
           - name: currency_conversion_rate
-            description: ""
+            description: "The conversion rate used for currency conversion."
           - name: usage.amount
-            description: ""
+            description: "The amount of usage recorded."
           - name: usage.unit
-            description: ""
+            description: "The unit of measurement for the usage."
           - name: usage.amount_in_pricing_units
-            description: ""
+            description: "The amount of usage expressed in pricing units."
           - name: usage.pricing_unit
-            description: ""
+            description: "The pricing unit associated with the usage."
           - name: credits.name
-            description: ""
+            description: "The name of the credits applied to the usage."
           - name: credits.amount
-            description: ""
+            description: "The amount of credits applied to the usage."
           - name: credits.full_name
-            description: ""
+            description: "The full name of the credits applied to the usage."
           - name: credits.id
-            description: ""
+            description: "The ID of the credits applied to the usage."
           - name: credits.type
-            description: ""
+            description: "The type of credits applied to the usage."
           - name: invoice.month
-            description: ""
+            description: "The year and month (YYYYMM) of the invoice that includes the cost line items."
           - name: cost_type
-            description: ""
+            description: "The type of cost this line item represents: regular, tax, adjustment, or rounding error."
           - name: adjustment_info.id
-            description: ""
+            description: "The ID of the adjustment information."
           - name: adjustment_info.description
-            description: ""
+            description: "A description of the adjustment information."
           - name: adjustment_info.mode
-            description: ""
+            description: "The mode of the adjustment information."
           - name: adjustment_info.type
-            description: ""
+            description: "The type of adjustment information."
           - name: tags.key
-            description: ""
+            description: "The key of the tags associated with the usage."
           - name: tags.value
-            description: ""
+            description: "The value of the tags associated with the usage."
           - name: tags.inherited
-            description: ""
+            description: "Indicates whether the tags are inherited."
           - name: tags.namespace
-            description: ""
+            description: "The namespace of the tags associated with the usage."
           - name: price.effective_price
-            description: ""
+            description: "The effective price of the resource usage."
           - name: price.tier_start_amount
-            description: ""
+            description: "The starting amount for the pricing tier."
           - name: price.unit
-            description: ""
+            description: "The unit of measurement for the price."
           - name: price.pricing_unit_quantity
-            description: ""
+            description: "The quantity of the pricing unit."
           - name: cost_at_list
-            description: ""
+            description: "The cost at list price before any discounts or credits."

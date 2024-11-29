@@ -30,20 +30,23 @@ sources:
         columns:
           - name: export_time
             description: |-
-              When the row was generated.
+              A processing time associated with an append of Cloud Billing data. This will always increase with each new export.
 
           - name: pricing_as_of_time
             description: |-
-              When the pricing was generated. The pricing was valid as of this date,
-               but could have been in effect before that.
+              The daily timestamp of when the pricing data was generated. The pricing data applicable to your Cloud Billing account is generated once each day.
 
           - name: billing_account_id
             description: |-
-              The ID of the Cloud Billing Account that the pricing is associated with.
+              The Cloud Billing account ID that the pricing is associated with.
+
+          - name: billing_account_name
+            description: |-
+              The name of the Cloud Billing account that the pricing is associated with.
 
           - name: business_entity_name
             description: |-
-              Business entity name of the service which offers the SKU.
+              The name of the Google service family for the service which offers the SKU. Values include GCP (Google Cloud) or Maps (Google Maps Platform).
 
           - name: service.id
             description: |-
@@ -51,7 +54,7 @@ sources:
 
           - name: service.description
             description: |-
-              The Google Cloud Platform service that offers the SKU.
+              A description of the Google Cloud Platform service that offers the SKU.
 
           - name: sku.id
             description: |-
@@ -83,17 +86,15 @@ sources:
 
           - name: pricing_unit_description
             description: |-
-              Human readable description of the pricing unit.
+              A human-readable description of the pricing unit.
 
           - name: account_currency_code
             description: |-
-              The currency that the billing account is configured to invoice in, using a 3-letter
-               currency code defined in ISO 4217.
+              The currency that the billing account is configured to invoice in, using a 3-letter currency code defined in ISO 4217.
 
           - name: currency_conversion_rate
             description: |-
-              The exchange rate from US dollars to the local currency. That is,
-               price/currency_conversion_rate is the price in US dollars.
+              The exchange rate from US dollars to the local currency. That is, price/currency_conversion_rate is the price in US dollars.
 
           - name: list_price.aggregation_info.aggregation_level
             description: |-
@@ -117,9 +118,7 @@ sources:
 
           - name: list_price.tiered_rates.account_currency_amount
             description: |-
-              The converted price, for the SKU, in the currency the Cloud Billing Account is
-               configured to use. The conversion rate will be the one that is or was effective
-               on the `pricing_as_of_time`.
+              The converted price, for the SKU, in the currency the Cloud Billing Account is configured to use. The conversion rate will be the one that is or was effective on the `pricing_as_of_time`.
 
           - name: billing_account_price.price_info.price_reason
             description: |-
@@ -127,8 +126,7 @@ sources:
 
           - name: billing_account_price.price_info.discount_percent
             description: |-
-              For pricing that is the result of a percent discount, this is the percent
-               discount used.
+              For pricing that is the result of a percent discount, this is the percent discount used.
 
           - name: billing_account_price.price_info.discount_percent_fixed_date
             description: |-
@@ -160,6 +158,4 @@ sources:
 
           - name: billing_account_price.tiered_rates.account_currency_amount
             description: |-
-              The converted price, for the SKU, in the currency the Cloud Billing Account is
-               configured to use. The conversion rate will be the one that is or was effective
-               on the `pricing_as_of_time`.
+              The converted price, for the SKU, in the currency the Cloud Billing Account is configured to use. The conversion rate will be the one that is or was effective on the `pricing_as_of_time`.
